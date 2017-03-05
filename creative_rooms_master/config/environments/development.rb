@@ -28,8 +28,23 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  config.autoload_paths += %W["#{config.root}/app/validators/"]
 
+
+  config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins '*'
+      resource '*', :headers => :any, :methods => [:get, :post, :options]
+    end
+  end
   config.action_mailer.perform_caching = false
+
+
+  # ALLOW DEVISE TO ACCEPT ANGULAR REQUEST
+  
+  config.to_prepare do
+    DeviseController.respond_to :html, :json
+  end
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
