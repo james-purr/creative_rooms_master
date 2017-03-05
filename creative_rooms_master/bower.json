@@ -1,0 +1,22 @@
+{
+  "name": "creative_rooms_master",
+  "homepage": "https://github.com/jamespjbennett/creative_rooms_master",
+  "authors": [
+    "James Bennett <jamespjbennett@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-ui-router": "^0.4.2",
+    "bootstrap": "^3.3.7"
+  }
+}
