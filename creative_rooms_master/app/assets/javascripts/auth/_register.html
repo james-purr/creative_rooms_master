@@ -3,14 +3,31 @@
 </div>
 
 <form ng-submit="register()">
-  <div class="input-group">
+  <div class="form-group">
     <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
   </div>
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Username" ng-model="user.username">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="First Name" ng-model="user.first_name">
   </div>
-  <div class="input-group">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Last Name" ng-model="user.last_name">
+  </div>
+  <div class="form-group">
     <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
+  </div>
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Password Confirmation" ng-model="user.password_confirmation">
+  </div>
+  <div class="form-group">
+    <select name="singleSelect" ng-model="user.role_enum" required>
+      <option value="">---Please select---</option> 
+      <option value="0">Homeowner</option> 
+      <option value="1">Artist</option>
+    </select>
   </div>
   <input type="submit" class="btn btn-default" value="Register">
 </form>
+
+  <div class="panel-footer">
+    Already signed up? <a href="/login">Log in here</a>.
+  </div>

@@ -11,6 +11,7 @@ function($scope, $state, Auth){
   };
 
   $scope.register = function() {
+    $scope.user.role_enum = parseInt($scope.user.role_enum)
     Auth.register($scope.user).then(function(){
       $state.go('home');
     });
