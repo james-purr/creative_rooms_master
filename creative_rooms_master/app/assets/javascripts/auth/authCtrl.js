@@ -5,11 +5,8 @@ angular.module('creativeRooms')
 'Auth',
 function($scope, $state, Auth){
     $scope.itemArray = [
-        {id: 1, name: 'first'},
-        {id: 2, name: 'second'},
-        {id: 3, name: 'third'},
-        {id: 4, name: 'fourth'},
-        {id: 5, name: 'fifth'},
+        {id: 0, name: 'Homeowner'},
+        {id: 1, name: 'Artist'},
     ];
 
     $scope.selected = { value: $scope.itemArray[0] };
@@ -21,8 +18,8 @@ function($scope, $state, Auth){
   };
 
   $scope.register = function() {
-    debugger
-    $scope.user.role_enum = parseInt($scope.user.role_enum)
+
+    $scope.user.role_enum = $scope.user.role_enum.id
     Auth.register($scope.user).then(function(){
       $state.go('home');
     });
