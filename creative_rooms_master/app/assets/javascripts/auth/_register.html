@@ -2,32 +2,48 @@
   <h1>Register</h1>
 </div>
 
-<form ng-submit="register()">
-  <div class="form-group">
-    <input type="email" class="form-control" placeholder="Email" ng-model="user.email">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="First Name" ng-model="user.first_name">
-  </div>
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Last Name" ng-model="user.last_name">
-  </div>
-  <div class="form-group">
-    <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
-  </div>
-  <div class="form-group">
-    <input type="password" class="form-control" placeholder="Password Confirmation" ng-model="user.password_confirmation">
+<form name="userForm" ng-submit="register()" novalidate>
+
+  <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+      <label>Email</label>
+      <input type="email" name="email" class="form-control" ng-model="user.email">
+      <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
   </div>
 
-  <ui-select ng-model="user.role_enum">
-    <ui-select-match>
-        <span ng-bind="$select.selected.name"></span>
-    </ui-select-match>
-    <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
-        <span ng-bind="item.name"></span>
-    </ui-select-choices>
-  </ui-select>
-  <input type="submit" class="btn btn-default" value="Register">
+  <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+      <label>First Name</label>
+      <input type="text" name="first_name" class="form-control" ng-model="user.first_name" required>
+      <p ng-show="userForm.first_name.$invalid && !userForm.first_name.$pristine" class="help-block">You first name is required.</p>
+  </div>
+
+  <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+      <label>Last Name</label>
+      <input type="text" name="last_name" class="form-control" ng-model="user.last_name" required>
+      <p ng-show="userForm.last_name.$invalid && !userForm.last_name.$pristine" class="help-block">You last name is required.</p>
+  </div>
+
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Password" ng-model="user.password" ng-minlength=6 ng-maxlength=25 required  name="password">
+    <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Min Password length is 6</p>
+  </div>
+
+  <div class="form-group">
+    <input type="password" class="form-control" placeholder="Password Confirmation" ng-model="user.password_confirmation" ng-minlength=6 ng-maxlength=25 required  name="password_confirmation">
+    <p ng-show="userForm.password_confirmation.$invalid && !userForm.password_confirmation.$pristine" class="help-block">Min Password length is 6</p>
+  </div>
+  <div class="form-group">
+    <ui-select ng-model="user.role_enum">
+      <ui-select-match>
+          <span ng-bind="$select.selected.name"></span>
+      </ui-select-match>
+      <ui-select-choices repeat="item in (itemArray | filter: $select.search) track by item.id">
+          <span ng-bind="item.name"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+  </div>
 </form>
 
   <div class="panel-footer">
