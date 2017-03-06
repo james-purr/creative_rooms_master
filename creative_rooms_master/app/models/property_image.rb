@@ -1,0 +1,2 @@
+class PropertyImage < ApplicationRecord
+end
