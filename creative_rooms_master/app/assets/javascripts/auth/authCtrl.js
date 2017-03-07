@@ -21,6 +21,7 @@ function($scope, $state, Auth){
 
     $scope.user.role_enum = $scope.user.role_enum.id
     Auth.register($scope.user).then(function(){
+      debugger
       $state.go('home');
     });
 
