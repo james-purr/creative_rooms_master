@@ -15,8 +15,7 @@ angular.module('creativeRooms')
                 }                    
                 return combined;
             }, function(value) {
-                if (value) {
-                  
+                if (value) {                  
                     ctrl.$parsers.unshift(function(viewValue) {
                         var origin = scope.passwordVerify;
                         if (origin !== viewValue) {

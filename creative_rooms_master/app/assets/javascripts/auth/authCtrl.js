@@ -9,6 +9,7 @@ function($scope, $state, Auth){
         {id: 0, name: 'Homeowner'},
         {id: 1, name: 'Artist'},
     ];
+    $scope.hello = "hello"
 
     $scope.selected = { value: $scope.itemArray[0] };
     
