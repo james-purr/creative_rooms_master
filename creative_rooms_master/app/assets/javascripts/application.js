@@ -3,4 +3,7 @@
 //= require angular-ui-router
 //= require angular-rails-templates
 //= require angular-ui-select
+//= require angular-material
+//= require angular-aria
+//= require angular-animate
 //= require_tree .

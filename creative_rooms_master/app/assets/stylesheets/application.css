@@ -14,4 +14,5 @@
  *= require_self
  *= require bootstrap/dist/css/bootstrap
  *= require angular-ui-select/dist/select
+ *= require angular-material/angular-material
  */
