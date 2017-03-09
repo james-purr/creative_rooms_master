@@ -31,9 +31,15 @@
   </div>
 
   <div class="form-group">
-    <input type="password" class="form-control" placeholder="Password Confirmation" ng-model="user.password_confirmation" ng-minlength=6 ng-maxlength=25 required  valid-password-c="userForm.password" name="password_confirmation" >
+    <input type="password" class="form-control" placeholder="Password Confirmation" ng-model="user.password_confirmation" ng-minlength=6 ng-maxlength=25 required  valid-password-c="userForm.password" name="password_confirmation" data-password-verify="user.password">
     <p ng-show="userForm.password_confirmation.$invalid && !userForm.password_confirmation.$pristine" class="help-block">Min Password length is 6</p>
   </div>
+
+  <div ng-show="form.password_confirmation.$error.required">
+          Field required!</div>
+  <div ng-show="form.password_confirmation.$error.passwordVerify">
+          Fields are not equal!</div>
+            
   <div class="form-group">
     <ui-select ng-model="user.role_enum">
       <ui-select-match>
