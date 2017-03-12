@@ -1,0 +1,20 @@
+.search-container{
+	text-align: center;
+}
+
+.searchbar-wdith{
+	width: 50%;
+	margin-top: 38px;
+}
+
+.searchbar-wdith input, .searchbar-wdith .input-group-btn button{
+	height:50px;
+}
+
+.searchbar-wdith .input-group-btn button{
+	width:50px;
+}
+
+.navbar-form .input-group.searchbar-wdith > .form-control{
+	width:110%;
+}

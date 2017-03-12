@@ -9,6 +9,8 @@
 
 require 'ffaker'
 
+User.delete_all
+
 20.times do
 	User.create(first_name: FFaker::Name.first_name, 
 				last_name: FFaker::Name.last_name, 
@@ -72,10 +74,8 @@ postcode_array = [
 'E17 8HH'
 ]
 
-
+Property.delete_all
 (0..37).each do |number|
 	property = Property.create(postcode: postcode_array.sample, description: FFaker::Lorem.paragraph, space_for_artist: [true, false].sample, user_id: property_owners.sample.id)
-
-	pi = PropertyImage.create(property_id: property.id, image: File.new("#{Rails.root}/app/assets/images/property_images/" + number + ".jpg"))
-
+	pi = PropertyImage.create(property_id: property.id, image: File.new("#{Rails.root}/app/assets/images/property_images/#{number}.jpg"))
 end
