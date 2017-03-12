@@ -16,3 +16,21 @@
  *= require angular-ui-select/dist/select
  *= require angular-material/angular-material
  */
+
+@font-face {
+  font-family:'Chivo';
+  src:font-url('Chivo-Black.ttf');
+  src:font-url('Chivo-BlackItalic.ttf');
+  src:font-url('Chivo-Bold.ttf');
+  src:font-url('Chivo-BoldItalic.ttf');
+  src:font-url('Chivo-Italic.ttf');
+  src:font-url('Chivo-Light.ttf');
+  src:font-url('Chivo-LightItalic.ttf');
+  src:font-url('Chivo-Regular.ttf');
+
+
+} 
+
+html, body{
+	font-family: 'Chivo'!important;
+}  
