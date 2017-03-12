@@ -4,4 +4,8 @@ class PropertiesController < ApplicationController
 		@properties = Property.all
 		render json: @properties
 	end
+
+	def featured
+		
+	end
 end

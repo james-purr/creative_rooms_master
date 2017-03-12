@@ -9,6 +9,11 @@ angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize
 	      url: '/home',
 		  templateUrl: 'home/_home.html',
 	      controller: 'MainCtrl',
+	      resolve: {
+	        propertyFeaturedPromise: ['posts', function(posts){
+	          return properties.getFeatured();
+	        }]
+	      },
 	    })
 	    .state('login', {
 	      onEnter: ['$state', 'Auth', function($state, Auth) {

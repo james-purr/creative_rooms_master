@@ -9,4 +9,10 @@ Rails.application.routes.draw do
 	match '/home' => 'application#angular', via: [:get]
 	match '/login' => 'application#angular', via: [:get]
 	match '/register' => 'application#angular', via: [:get]
+
+	# routes to get property data
+
+	match '/featured_properties' => 'properties#featured', via: [:get]
+
+	
 end
