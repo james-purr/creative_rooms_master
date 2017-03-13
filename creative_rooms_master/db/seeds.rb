@@ -79,3 +79,5 @@ Property.delete_all
 	property = Property.create(postcode: postcode_array.sample, description: FFaker::Lorem.paragraph, space_for_artist: [true, false].sample, user_id: property_owners.sample.id)
 	pi = PropertyImage.create(property_id: property.id, image: File.new("#{Rails.root}/app/assets/images/property_images/#{number}.jpg"))
 end
+
+

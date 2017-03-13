@@ -22,5 +22,10 @@ class Property < ApplicationRecord
 	end
 
 
+	def primary_property_image
+		self.property_images.first.image.url
+	end
+
+
 
 end

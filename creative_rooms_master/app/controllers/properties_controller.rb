@@ -6,7 +6,15 @@ class PropertiesController < ApplicationController
 	end
 
 	def featured
-		@properties = Property.where(featured:true)
-		render json: @properties
+		@featured_properties = []
+		featured_properties = Property.where(featured:true).select(:id, :postcode)
+		featured_properties.each do |property|
+			@featured_properties.push(
+				{ property: property,
+				  image: property.primary_property_image
+				}
+			)
+		end
+		render json: @featured_properties
 	end
 end
