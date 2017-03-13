@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe PropertiesController, type: :controller do
 
-	let(:parsed_response) { response.body.to_json }
+	let(:parsed_response) { JSON.parse(response.body) }
 
 	describe "GET #featured" do
     	user = User.create(first_name: 'test', last_name: 'test', email: Faker::Internet.email, password: 'password',  password_confirmation: 'password', role_enum: 0)

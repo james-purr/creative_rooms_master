@@ -20,6 +20,7 @@ require 'factory_girl_rails'
 require_relative 'support/controller_macros'
 require 'devise'
 require "paperclip/matchers"
+require 'pry'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
