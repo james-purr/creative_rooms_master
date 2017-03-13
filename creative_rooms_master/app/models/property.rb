@@ -16,7 +16,7 @@ class Property < ApplicationRecord
 	def max_four_featured
 		if self.featured
 			if Property.where(featured:true).count >= 4
-				property.featured = false
+				self.featured = false
 			end
 		end		
 	end

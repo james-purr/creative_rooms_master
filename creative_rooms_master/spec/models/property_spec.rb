@@ -46,9 +46,7 @@ RSpec.describe Property, type: :model do
       Property.create(postcode: Faker::Address.zip_code, description: 'test desc', space_for_artist: true, user_id: user.id, featured:true)
     end
 
-    new_property = build(:property)
-    new_property.featured = true
-    new_property.save
+    new_property = Property.create(postcode: Faker::Address.zip_code, description: 'test desc', space_for_artist: true, user_id: user.id, featured:true)
 
     expect(new_property.featured).to be(false)
   end
