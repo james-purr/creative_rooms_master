@@ -40,7 +40,7 @@ RSpec.describe Property, type: :model do
 
   end
 
-  it 'should keep number of featured properties to 4 when creating'
+  it 'should keep number of featured properties to 4 when creating' do
     4.times do
       property = build(:property)
       property.featured = true
