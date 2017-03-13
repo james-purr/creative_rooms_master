@@ -6,6 +6,7 @@ class PropertiesController < ApplicationController
 	end
 
 	def featured
-		
+		@properties = Property.where(featured:true)
+		render json: @properties
 	end
 end

@@ -2,16 +2,15 @@ require 'rails_helper'
 
 RSpec.describe PropertiesController, type: :controller do
 
-	describe "GET #featured" do  
-	  # or use fixtures / factories
-	  # let!(:model) { Model.create!(foo: 'bar') }
-	  # before :each do
-	  #   get :index, filtered: 'someValue'
-	  # end
-	  # expect(parsed_response.first["id"].to_i).to eq model.id
-	end
+	let(:parsed_response) { response.body.to_json }
+	
+	describe "GET #featured" do
+		let!(:property) { Property.create(postcode: Faker::Address.zip_code, description: 'test desc', space_for_artist: true, user_id: user.id, featured:true) }
+		let!(:property_2) { Property.create(postcode: Faker::Address.zip_code, description: 'test desc', space_for_artist: true, user_id: user.id, featured:false) }
 
-	describe "GET index" do
-		#expect properties with featured value to equal 4
+		before :each do
+			get :featured
+		end
+	  expect(parsed_response.first["id"].to_i).to eq property.id
 	end
 end
