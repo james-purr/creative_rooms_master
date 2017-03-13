@@ -42,9 +42,8 @@ RSpec.describe Property, type: :model do
 
   it 'should keep number of featured properties to 4 when creating' do
     4.times do
-      property = build(:property)
-      property.featured = true
-      property.save
+      user = User.create(first_name: 'test', last_name: 'test', email: Faker::Internet.email, password: 'password',  password_confirmation: 'password', role_enum: 0)
+      Property.create(postcode: Faker::Address.zip_code, description: 'test desc', space_for_artist: true, user_id: user.id, featured:true)
     end
 
     new_property = build(:property)
