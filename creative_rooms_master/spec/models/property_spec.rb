@@ -39,6 +39,7 @@ RSpec.describe Property, type: :model do
     expect(property).to_not be_valid  	
 
   end
+  
 
 
 end

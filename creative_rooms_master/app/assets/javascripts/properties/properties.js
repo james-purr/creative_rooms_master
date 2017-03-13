@@ -1,4 +1,4 @@
-angular.module('flapperNews')
+angular.module('creativeRooms')
 .factory('properties', [
 '$http', 
 function($http){
