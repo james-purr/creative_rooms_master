@@ -30,7 +30,7 @@ RSpec.describe Property, type: :model do
 
   it 'should require at least 3 property images' do
   	user = User.create(first_name: 'test', last_name: 'test', email: Faker::Internet.email, password: 'password',  password_confirmation: 'password', role_enum: 0)
-	property = Property.create(postcode: Faker::Address.zip_code, description: 'test desc', space_for_artist: true, user_id: user.id)
+	   property = Property.create(postcode: Faker::Address.zip_code, description: 'test desc', space_for_artist: true, user_id: user.id)
   	2.times do
   		pi = build(:property_image)
   		property.property_images << pi
@@ -38,6 +38,20 @@ RSpec.describe Property, type: :model do
 
     expect(property).to_not be_valid  	
 
+  end
+
+  it 'should keep number of featured properties to 4 when creating'
+    4.times do
+      property = build(:property)
+      property.featured = true
+      property.save
+    end
+
+    new_property = build(:property)
+    new_property.featured = true
+    new_property.save
+
+    expect(new_property.featured).to be(false)
   end
   
 
