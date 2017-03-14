@@ -10,7 +10,7 @@ angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize
 		  templateUrl: 'home/_home.html',
 	      controller: 'MainCtrl',
 	      resolve: {
-	        propertyFeaturedPromise: ['properties', function(posts){
+	        propertyFeaturedPromise: ['properties', function(properties){
 	          return properties.getFeatured();
 	        }]
 	      },
