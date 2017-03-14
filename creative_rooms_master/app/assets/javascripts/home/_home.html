@@ -1,18 +1,24 @@
 <div class="page-header short-header">
-Featured Properties
+
 </div>
 
 <div class="row content-container">
-	<div class="col-xs-9 border-right no-float">		
+	<div class="col-xs-9 border-right no-float">	
+    <br>
+    <h3 class="featured-property-header">Featured Properties</h3>	
+    <br>
     <div ng-repeat="property in featuredProperties | orderBy: 'id'">
-      <div class="col-xs-3 featured-property-image-preview">
+      <div class="col-xs-6 featured-property-image-preview">
         <img src="{{property['image']}}">
       {{property['property'].postcode}}
       </div>
     </div>
   </div>
-	<div class="col-xs-3 no-float">
-	</div>
+  <div class="col-xs-3 no-float">
+    <div class="map-container">
+      MAP WILL GO HERE
+    </div>
+  </div>
 </div>
 
 
