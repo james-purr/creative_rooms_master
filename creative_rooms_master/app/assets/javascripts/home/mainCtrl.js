@@ -7,5 +7,4 @@ angular.module('creativeRooms')
 'properties',
 function($scope, $timeout, $mdSidenav, $log, properties){
     $scope.featuredProperties = properties.featuredProperties
-    debugger
 }])

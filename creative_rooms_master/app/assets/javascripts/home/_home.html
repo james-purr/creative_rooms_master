@@ -5,7 +5,8 @@ Featured Properties
 <div class="row content-container">
 	<div class="col-xs-9 border-right no-float">		
     <div ng-repeat="property in featuredProperties | orderBy: 'id'">
-      <div class="col-xs-3">
+      <div class="col-xs-3 featured-property-image-preview">
+        <img src="{{property['image']}}">
       {{property['property'].postcode}}
       </div>
     </div>
