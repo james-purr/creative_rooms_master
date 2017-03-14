@@ -1,12 +1,12 @@
 <div class="page-header short-header">
-HELLO
+Featured Properties
 </div>
 
 <div class="row content-container">
 	<div class="col-xs-9 border-right no-float">		
-    <div ng-repeat="property in properties">
+    <div ng-repeat="property in featuredProperties | orderBy: 'id'">
       <div class="col-xs-3">
-      {{post['property'].postcode}}
+      {{property['property'].postcode}}
       </div>
     </div>
   </div>
