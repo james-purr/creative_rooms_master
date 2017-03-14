@@ -6,11 +6,11 @@ angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize
 	function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$stateProvider
 	    .state('home', {
-	      url: '/home',
+	      url: '/',
 		  templateUrl: 'home/_home.html',
 	      controller: 'MainCtrl',
 	      resolve: {
-	        propertyFeaturedPromise: ['posts', function(posts){
+	        propertyFeaturedPromise: ['properties', function(posts){
 	          return properties.getFeatured();
 	        }]
 	      },

@@ -27,5 +27,22 @@ class Property < ApplicationRecord
 	end
 
 
+	private
+
+	def self.featured_properties
+		Property.where(featured:true).select(:id, :postcode)
+	end
+
+	def self.featured_properties_object
+		featured_properties = []
+		Property.featured_properties.each do |property|
+			featured_properties.push(
+				{ property: property,
+				  image: property.primary_property_image
+				}
+			)
+		end
+		return featured_properties
+	end
 
 end

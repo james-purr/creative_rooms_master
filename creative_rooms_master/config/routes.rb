@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 		root to: "application#angular", as: :authenticated_root
 	end
 
-	match '/home' => 'application#angular', via: [:get]
+	match '/' => 'application#angular', via: [:get]
 	match '/login' => 'application#angular', via: [:get]
 	match '/register' => 'application#angular', via: [:get]
 
