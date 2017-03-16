@@ -7,4 +7,5 @@
 //= require angular-aria
 //= require angular-animate
 //= require ngmap
+//= require google-maps
 //= require_tree .
