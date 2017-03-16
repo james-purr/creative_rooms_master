@@ -6,4 +6,5 @@
 //= require angular-material
 //= require angular-aria
 //= require angular-animate
+//= require ngmap
 //= require_tree .
