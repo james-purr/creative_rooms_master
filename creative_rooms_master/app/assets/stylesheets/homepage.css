@@ -1,0 +1,7 @@
+.map-container{
+	border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    margin-top: 106px;
+    height: 299px;
+    background: rgba(51, 122, 183, 0.55);
+}
