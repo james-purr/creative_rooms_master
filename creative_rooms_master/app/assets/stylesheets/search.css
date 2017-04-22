@@ -18,3 +18,38 @@
 .navbar-form .input-group.searchbar-wdith > .form-control{
 	width:110%;
 }
+
+.large-searchbar-width{
+	width: 100%;
+}
+
+.search-container.large{
+	height: 151px;
+    padding-top: 100px;
+    border-bottom:none;
+}
+
+.large-searchbar-width input{
+	height: 67px;
+}
+
+.large-searchbar-container{	
+    margin-top: 100px;
+}
+
+.search-container-large{
+	height: auto;
+    padding-top: 0;
+    border-bottom: none;
+}
+
+.large-searchbar-width .input-group-btn .search-button{
+   height: 67px;
+   width: 75px; 
+   font-size: 23px;	
+}
+
+.content-container .large-searchbar-container .large-searchbar-width .input-group-btn {
+	width:1px;
+}
+
