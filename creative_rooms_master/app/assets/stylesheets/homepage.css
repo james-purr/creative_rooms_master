@@ -5,3 +5,7 @@
     height: 299px;
     background: rgba(51, 122, 183, 0.55);
 }
+
+.large-searchbar-container{
+	text-align: center;
+}

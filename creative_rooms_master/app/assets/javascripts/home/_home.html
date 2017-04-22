@@ -3,22 +3,18 @@
 </div>
 
 <div class="row content-container">
-	<div class="col-xs-9 border-right no-float">	
-    <br>
-    <h3 class="featured-property-header">Featured Properties</h3>	
-    <br>
-    <div ng-repeat="property in featuredProperties | orderBy: 'id'">
-      <div class="col-xs-6 featured-property-image-preview">
-        <img src="{{property['image']}}">
-      {{property['property'].postcode}}
+  <div class="container">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8 large-searchbar-container">
+        centered
       </div>
-    </div>
+      <div class="col-sm-2"></div>
   </div>
-  <div class="col-xs-3 no-float">
+<!--   <div class="col-xs-3 no-float">
     <div class="map-container" ng-controller="MapCtrl">
       <ng-map center="[51.590, -0.017]" zoom="12"></ng-map>
     </div>
-  </div>
+  </div> -->
 </div>
 
 
