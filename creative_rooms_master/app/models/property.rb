@@ -5,6 +5,7 @@ class Property < ApplicationRecord
 	validates :postcode, :description, :space_for_artist, :user_id,  presence: true
 	validate :must_be_homeowner
 	before_create :max_four_featured
+	searchkick
 
 
 	def must_be_homeowner
