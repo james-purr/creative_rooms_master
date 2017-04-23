@@ -34,7 +34,7 @@
 }
 
 .large-searchbar-container{	
-    margin-top: 100px;
+    margin-top: 137px;
 }
 
 .search-container-large{
@@ -51,5 +51,13 @@
 
 .content-container .large-searchbar-container .large-searchbar-width .input-group-btn {
 	width:1px;
+}
+.navbar-form .input-group > .form-control#srch-term{
+    font-size: 20px;
+    padding-left: 30px;
+}	
+
+.search-header{
+	margin-bottom: 70px;
 }
 

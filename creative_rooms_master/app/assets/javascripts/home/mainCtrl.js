@@ -5,7 +5,13 @@ angular.module('creativeRooms')
 '$mdSidenav', 
 '$log',
 'properties',
+'$state',
 'NgMap',
 function($scope, $timeout, $mdSidenav, $log, properties, NgMap){
-    $scope.featuredProperties = properties.featuredProperties
-}])
+
+	$scope.search = function(term) {
+	    debugger
+	};	
+
+
+}]);
