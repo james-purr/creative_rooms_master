@@ -11,6 +11,7 @@ class PropertiesController < ApplicationController
 	end
 
 	def search_results
-		binding.pry
+		@featured_properties = Property.featured_properties_object
+		render json: @featured_properties
 	end
 end
