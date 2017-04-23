@@ -9,4 +9,8 @@ class PropertiesController < ApplicationController
 		@featured_properties = Property.featured_properties_object
 		render json: @featured_properties
 	end
+
+	def search_results
+		binding.pry
+	end
 end

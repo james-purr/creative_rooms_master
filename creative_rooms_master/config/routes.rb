@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 	# routes to get property data
 
 	match '/featured_properties' => 'properties#featured', via: [:get]
+	match '/search_results/:search_term' => 'properties#search_results', via: [:get]
+
 
 	
 end

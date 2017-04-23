@@ -1,16 +1,15 @@
 angular.module('creativeRooms')
 .controller('MainCtrl', [
 '$scope', 
-'$timeout', 
-'$mdSidenav', 
+'$timeout',  
 '$log',
 'properties',
 '$state',
 'NgMap',
-function($scope, $timeout, $mdSidenav, $log, properties, NgMap){
+function($scope, $timeout, $log, properties, $state, NgMap){
 
 	$scope.search = function(term) {
-	    debugger
+		$state.go('search', { searchString: term });
 	};	
 
 

@@ -25,6 +25,11 @@ angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize
 	      templateUrl: 'auth/_login.html',
 	      controller: 'AuthCtrl'
 	    })
+		.state('search', {
+		    url: "/search/:searchString",
+		    templateUrl: "search/search.html",
+		    controller: 'SearchCtrl'
+		})
 	    .state('register', {
 	      onEnter: ['$state', 'Auth', function($state, Auth) {
 	        Auth.currentUser().then(function (){
