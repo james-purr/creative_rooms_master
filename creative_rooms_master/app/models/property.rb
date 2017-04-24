@@ -4,9 +4,15 @@ class Property < ApplicationRecord
 	has_many :property_images
 	validates :postcode, :description, :space_for_artist, :user_id,  presence: true
 	validate :must_be_homeowner
+	geocoded_by :get_postcode   # can also be an IP address
+	after_validation :geocode          # auto-fetch coordinates
 	before_create :max_four_featured
 	searchkick
 
+
+	def get_postcode
+		self.postcode
+	end
 
 	def must_be_homeowner
 		if self.user
