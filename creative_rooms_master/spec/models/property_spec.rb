@@ -48,6 +48,12 @@ RSpec.describe Property, type: :model do
     new_property = Property.create(postcode: Faker::Address.zip_code, description: 'test desc', space_for_artist: true, user_id: user.id, featured:true)
     expect(new_property.featured).to be(false)
   end
+
+  it 'should create lat and lng' do
+    user = User.create(first_name: 'test', last_name: 'test', email: Faker::Internet.email, password: 'password',  password_confirmation: 'password', role_enum: 0)
+    property = Property.create(postcode: Faker::Address.zip_code, description: 'test desc', space_for_artist: true, user_id: user.id, featured:true)
+    expect(property.latitude).to be_kind_of(Float)
+  end
   
 
 
