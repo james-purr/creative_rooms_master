@@ -3,7 +3,8 @@ angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize
 	'$stateProvider',
 	'$urlRouterProvider',
 	'$locationProvider',
-	function($stateProvider, $urlRouterProvider, $locationProvider) {
+	'$httpProvider',
+	function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 	$stateProvider
 	    .state('home', {
 	      url: '/',
@@ -48,4 +49,6 @@ angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize
 		enabled: true,
 		requireBase: false
 	});
+	$httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 }])

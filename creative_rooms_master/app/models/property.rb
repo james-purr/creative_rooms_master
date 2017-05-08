@@ -7,7 +7,12 @@ class Property < ApplicationRecord
 	geocoded_by :get_postcode   # can also be an IP address
 	after_validation :geocode          # auto-fetch coordinates
 	before_create :max_four_featured
-	searchkick
+	# searchkick
+	searchkick locations: [:location]
+
+	def search_data
+		attributes.merge location: {lat: latitude, lon: longitude}
+	end
 
 
 	def get_postcode

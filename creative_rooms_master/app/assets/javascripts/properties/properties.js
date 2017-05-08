@@ -15,8 +15,21 @@ function($http){
 	};
 
 	o.getSearchResults = function(term){
-		debugger
-		return $http.get('/search_results/' + term + '.json').then(function(data){
+
+// return $.ajax({
+//     url: "http://services.gisgraphy.com//geocoding/geocode?address=" + reg + "&country=" + cntry_code + "&format=json",
+//     async: false,
+//     dataType: 'jsonp',
+//     success: function (data) {
+//            var lat = data.result[0].lat;
+//            console.log(lat);
+//            var lng = data.result[0].lng;
+//            console.log(lng);
+//        }
+// });	
+		// $http.get('/someUrl').then(successCallback, errorCallback);
+		return $http.get("http://services.gisgraphy.com//geocoding/geocode?address=%22" + term + "%22&format=json", {dataType: 'jsonp'}).then(function(data){
+			debugger
 	        angular.copy(data.data, o.searchResults);
 	    });		
 	}

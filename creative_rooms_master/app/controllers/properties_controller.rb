@@ -11,7 +11,8 @@ class PropertiesController < ApplicationController
 	end
 
 	def search_results
-		@featured_properties = Property.featured_properties_object
-		render json: @featured_properties
+		@search_results = Property.near(params["search_term"])
+
+		render json: @search_results
 	end
 end
