@@ -29,7 +29,15 @@ angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize
 		.state('search', {
 		    url: "/search/:searchString",
 		    templateUrl: "search/search.html",
-		    controller: 'SearchCtrl'
+		    controller: 'SearchCtrl',
+		    // resolve: {
+		    //     propertyResultsPromise: properties.getSearchResults();
+		    // },
+		    resolve: {
+		    	propertyResultsPromise: ['properties', function(properties){
+		        	return properties.getSearchResults();
+		       	}]
+	      	},
 		})
 	    .state('register', {
 	      onEnter: ['$state', 'Auth', function($state, Auth) {

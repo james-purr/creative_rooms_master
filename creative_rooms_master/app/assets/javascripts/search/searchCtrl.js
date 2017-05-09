@@ -7,7 +7,14 @@ angular.module('creativeRooms')
 '$state',
 'properties',
 function($scope, $timeout, $log, $stateParams, $state, properties){
-	$scope.searchString = $stateParams.searchString;
-	var searchResults = properties.getSearchResults($scope.searchString);
-	debugger
+	// debugger
+	// $scope.searchString = $stateParams.searchString;
+	// var searchResults = properties.getSearchResults($scope.searchString);
+ //    properties.getSearchResults($scope.searchString)
+ //    .then(function(results) {
+ //        searchResults = results;
+ //        $scope.properties = searchResults;
+ //    })
+
+	// debugger
 }]);
