@@ -1,8 +1,7 @@
 angular.module('creativeRooms')
 .factory('properties', [
 '$http', 
-'$route',
-function($http, $route){
+function($http){
 	
 	var o = {
 		featuredProperties: [],
@@ -15,12 +14,12 @@ function($http, $route){
 	    });
 	};
 
-	o.getSearchResults = function(){
-		debugger		
-		return $http.get('/search_results/' + term + '.json').then(function(data){
-			debugger
-	        angular.copy(data.data, o.searchResults);
+	o.getSearchResults = function(route){
+		debugger
+		$http.get('/search_results/' + term + '.json').then(function(data){
+	        debugger
+	        return data.data
 	    });		
-	};
+	}
 	return o;
 }])

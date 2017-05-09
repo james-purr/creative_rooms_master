@@ -1,10 +1,11 @@
-angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize', 'ui.select', 'ngMaterial', 'ngMap'])
+angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize', 'ui.select', 'ngMaterial', 'ngMap', 'ngRoute'])
 .config([
 	'$stateProvider',
 	'$urlRouterProvider',
 	'$locationProvider',
 	'$httpProvider',
-	function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+	'$routeProvider',
+	function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider,$routeProvider) {
 	$stateProvider
 	    .state('home', {
 	      url: '/',
@@ -30,14 +31,11 @@ angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize
 		    url: "/search/:searchString",
 		    templateUrl: "search/search.html",
 		    controller: 'SearchCtrl',
-		    // resolve: {
-		    //     propertyResultsPromise: properties.getSearchResults();
-		    // },
-		    resolve: {
-		    	propertyResultsPromise: ['properties', function(properties){
-		        	return properties.getSearchResults();
-		       	}]
-	      	},
+		      resolve: {
+		        propertyFeaturedPromise: ['properties', function(properties){
+		          return properties.getSearchResults($routeProvider);
+		        }]
+		      },
 		})
 	    .state('register', {
 	      onEnter: ['$state', 'Auth', function($state, Auth) {
