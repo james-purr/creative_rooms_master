@@ -14,10 +14,8 @@ function($http){
 	    });
 	};
 
-	o.getSearchResults = function(route){
-		debugger
+	o.getSearchResults = function(term){
 		$http.get('/search_results/' + term + '.json').then(function(data){
-	        debugger
 	        return data.data
 	    });		
 	}

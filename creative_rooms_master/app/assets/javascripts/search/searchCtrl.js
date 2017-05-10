@@ -5,13 +5,13 @@ angular.module('creativeRooms')
 '$log',
 '$stateParams',
 '$state',
-'$q',
 'properties',
-function($scope, $timeout, $log, $stateParams, $state, $q, properties){
+'$http',
+function($scope, $timeout, $log, $stateParams, $state, properties,$http){
 	$scope.searchString = $stateParams.searchString;
-	$q.all([
-	      properties.getSearchResults($scope.searchString),
-	    ]).then(function(data){
-	      debugger
-	 });
+	$http.get('/search_results/' + $scope.searchString + '.json').then(function(data){
+		debugger
+        $scope.properties =  data.data;
+    });	
+    debugger
 }]);
