@@ -80,4 +80,15 @@ Property.delete_all
 	pi = PropertyImage.create(property_id: property.id, image: File.new("#{Rails.root}/app/assets/images/property_images/#{number}.jpg"))
 end
 
+room_image_array = (1..19).to_a
+Property.each do |property|
+	room = Room.new(property_id: property.id, description: FFaker::Lorem.paragraph, bathroom: [true, false].shuffle[0])
+	3.times do
+		image = RoomImage.create(image: File.new("#{Rails.root}/app/assets/images/room_images/#{room_image_array.shuffle[0]}.jpg"))
+		room.room_images.push(image)
+	end
+end
+
+
+
 
