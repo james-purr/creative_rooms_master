@@ -12,6 +12,8 @@ class Room < ApplicationRecord
 			return_object[room[0].id] = {
 				description: room[0].description,
 				image: room[0].room_images.first.image.url,
+				owner: room.property.user.full_name
+				
 			}
 		end
 		return return_object
