@@ -1,4 +1,4 @@
-angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize', 'ui.select', 'ngMaterial', 'ngMap'])
+angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize', 'ui.select', 'ngMaterial', 'ngMap', 'ngRateIt'])
 .config([
 	'$stateProvider',
 	'$urlRouterProvider',
