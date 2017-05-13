@@ -4,6 +4,7 @@ angular.module('creativeRooms')
 'properties',
 'NgMap',
 function($scope, properties, NgMap){
+	// $scope.googleMapsUrl="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6E9OfPFmAFiaJCeUGhxmZpWLIKVGJ9dI"
 	// function to get properties(just postcodes) within bounds of map
 	// need to get bounds, and pass that to the factory function so it knows the coordinates to look within
 	// either convert postcodes to lat/lng objects in ruby, or do it in the factory. We basically need a list of lat/lng coordinates to return here

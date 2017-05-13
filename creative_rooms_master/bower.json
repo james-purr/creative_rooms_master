@@ -21,7 +21,7 @@
     "AngularDevise": "angular-devise#^1.3.0",
     "angular-ui-select": "^0.19.6",
     "angular-material": "^1.1.3",
-    "ngmap": "^1.18.4",
-    "angular-rateit": "^3.0.2"
+    "angular-rateit": "^3.0.2",
+    "ngmap": "^1.18.4"
   }
 }

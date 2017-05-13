@@ -5,8 +5,7 @@ angular.module('creativeRooms')
 '$log',
 'properties',
 '$state',
-'NgMap',
-function($scope, $timeout, $log, properties, $state, NgMap){
+function($scope, $timeout, $log, properties, $state){
 
 	$scope.search = function(term) {
 		$state.go('search', { searchString: term });
