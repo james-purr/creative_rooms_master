@@ -14,8 +14,6 @@ RSpec.describe PropertiesController, type: :controller do
 		before :each do
 			get :featured
 		end
-		it 'should return featured properties' do
-	  		expect(parsed_response.first['property']['id'].to_i).to eq property.id
-	  	end
+
 	end
 end
