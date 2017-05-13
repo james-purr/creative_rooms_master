@@ -2,7 +2,10 @@
 	<div class="col-xs-8">	
 		<p class="search-results-header">SEARCH RESULTS</p>
 		<div class="col-xs-6 search-result-show" ng-repeat="(key, value) in properties">
-			<!-- <p>{{value.description}}</p> -->
+			<div class="hidden extra-room-info">
+				<p>{{value.description}}</p>
+				<p>{{value.user}}</p>
+			</div>
 			<img src="{{value.image}}"/>
 		</div>
 	</div>
