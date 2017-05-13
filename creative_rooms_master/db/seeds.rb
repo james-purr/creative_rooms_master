@@ -82,10 +82,11 @@ require 'ffaker'
 
 room_image_array = (1..19).to_a
 Property.all.each do |property|
-	room = Room.new(property_id: property.id, description: FFaker::Lorem.paragraph, bathroom: [true, false].shuffle[0])
+	puts "property is #{property.id}"
+	room = Room.create(property_id: property.id, description: FFaker::Lorem.paragraph, bathroom: [true, false].shuffle[0])
+	puts "room with id #{room.id} created with property id od #{property.id}"
 	3.times do
-		image = RoomImage.create(image: File.new("#{Rails.root}/app/assets/images/room_images/#{room_image_array.shuffle[0]}.jpg"))
-		room.room_images.push(image)
+		image = RoomImage.create(image: File.new("#{Rails.root}/app/assets/images/room_images/#{room_image_array.shuffle[0]}.jpg"), room_id: room.id)
 	end
 end
 
