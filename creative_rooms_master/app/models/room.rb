@@ -16,9 +16,11 @@ class Room < ApplicationRecord
 		rooms.each do |room| 
 			return_object[room[0].id] = {
 				description: room[0].description,
+				postcode: room[0].property.postcode,
 				image: room[0].room_images.first.image.url,
 				owner: room[0].property.user.full_name,
-				rating: room[0].average_rating
+				rating: (1..room[0].average_rating).to_a,
+				remaining_rating: (room[0].average_rating+1..5).to_a
 				
 			}
 		end

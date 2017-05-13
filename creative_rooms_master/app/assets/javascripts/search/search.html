@@ -4,13 +4,28 @@
 		<div class="col-xs-6 search-result-show" ng-repeat="(key, value) in properties">
 			<div class="hidden extra-room-info">
 				<p>{{value.description}}</p>
-				<p>{{value.user}}</p>
+				
 			</div>
 			<img src="{{value.image}}"/>
-			<ng-rate-it ng-model="test.rateit"></ng-rate-it>
+			<div class="ratings-container">
+				<div class="user-info">
+					<i class="fa fa-user" aria-hidden="true"></i><span>{{value.owner}}</span>	
+				</div>
+				<div class="address-info">
+					<i class="fa fa-location-arrow" aria-hidden="true"></i><span>{{value.postcode}}</span>
+				</div>
+				<div class="filled-rating">
+					<i ng-repeat="n in value.rating track by $index" class="fa fa-star" aria-hidden="true"></i>
+				</div>
+				<div class="remaining-rating">
+					<i ng-repeat="n in value.remaining_rating track by $index" class="fa fa-star-o" aria-hidden="true"></i>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="col-xs-4 search-page-map-container">
-		
+	    <div class="map-container" ng-controller="MapCtrl">
+	      <ng-map center="[51.590, -0.017]" zoom="12"></ng-map>
+	    </div>		
 	</div>
 </div>
