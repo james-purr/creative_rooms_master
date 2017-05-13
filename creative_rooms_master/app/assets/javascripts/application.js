@@ -6,6 +6,7 @@
 //= require angular-material
 //= require angular-aria
 //= require angular-animate
+//= require angular-jk-rating-star
 //= require ngmap
 //= require google-maps
 //= require_tree .
