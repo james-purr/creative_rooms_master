@@ -80,13 +80,19 @@ require 'ffaker'
 # 	pi = PropertyImage.create(property_id: property.id, image: File.new("#{Rails.root}/app/assets/images/property_images/#{number}.jpg"))
 # end
 
-room_image_array = (1..19).to_a
-Property.all.each do |property|
-	puts "property is #{property.id}"
-	room = Room.create(property_id: property.id, description: FFaker::Lorem.paragraph, bathroom: [true, false].shuffle[0])
-	puts "room with id #{room.id} created with property id od #{property.id}"
-	3.times do
-		image = RoomImage.create(image: File.new("#{Rails.root}/app/assets/images/room_images/#{room_image_array.shuffle[0]}.jpg"), room_id: room.id)
+# room_image_array = (1..19).to_a
+# Property.all.each do |property|
+# 	puts "property is #{property.id}"
+# 	room = Room.create(property_id: property.id, description: FFaker::Lorem.paragraph, bathroom: [true, false].shuffle[0])
+# 	puts "room with id #{room.id} created with property id od #{property.id}"
+# 	3.times do
+# 		image = RoomImage.create(image: File.new("#{Rails.root}/app/assets/images/room_images/#{room_image_array.shuffle[0]}.jpg"), room_id: room.id)
+# 	end
+# end
+
+Room.all.each do |room|
+	10.times do
+		Rating.create(rating: (1..5).to_a.sample, room_id: room.id)
 	end
 end
 
