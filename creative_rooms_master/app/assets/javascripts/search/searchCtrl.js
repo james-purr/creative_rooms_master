@@ -7,7 +7,8 @@ angular.module('creativeRooms')
 '$state',
 'properties',
 '$http',
-function($scope, $timeout, $log, $stateParams, $state, properties,$http){
+'NgMap',
+function($scope, $timeout, $log, $stateParams, $state, properties,$http,NgMap){
 	$scope.searchString = $stateParams.searchString;
 	$http.get('/search_results/' + $scope.searchString + '.json').then(function(data){
         $scope.properties =  data.data;

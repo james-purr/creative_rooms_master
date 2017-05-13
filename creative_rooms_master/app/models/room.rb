@@ -20,8 +20,8 @@ class Room < ApplicationRecord
 				image: room[0].room_images.first.image.url,
 				owner: room[0].property.user.full_name,
 				rating: (1..room[0].average_rating).to_a,
-				remaining_rating: (room[0].average_rating+1..5).to_a
-				
+				remaining_rating: (room[0].average_rating+1..5).to_a,
+				position:  [room[0].property.latitude, room[0].property.longitude]				
 			}
 		end
 		return return_object
