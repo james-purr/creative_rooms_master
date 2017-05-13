@@ -77,4 +77,24 @@
     margin-bottom: 30px;	
 }
 
+.extra-room-info{
+	position:relative;
+}
+
+.extra-room-info p{
+    position: absolute;
+    top: 50px;
+    padding-left: 30px;
+}
+
+.search-result-show:hover > img{
+	opacity: 0.4;
+}
+
+.search-result-show:hover > .extra-room-info{
+	display: block!important;
+
+}
+
+
 
