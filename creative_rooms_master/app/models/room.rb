@@ -18,7 +18,7 @@ class Room < ApplicationRecord
 				description: room[0].description,
 				image: room[0].room_images.first.image.url,
 				owner: room[0].property.user.full_name,
-				rating: room.average_rating
+				rating: room[0].average_rating
 				
 			}
 		end
