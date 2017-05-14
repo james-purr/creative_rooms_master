@@ -24,6 +24,9 @@ function($scope, $timeout, $log, $stateParams, $state, properties,$http,NgMap){
     $scope.highlightOnMap = function(passedScope, id){
     	passedScope.markers[id]["icon"] = $scope.highlightlIcon();	
     };
+    $scope.removeHighlightOnMap = function(passedScope, id){
+    	passedScope.markers[id]["icon"] = $scope.normalIcon();	
+    };
 
     $scope.normalIcon = function() {
       return 'http://i.imgur.com/21xqxv7.png';

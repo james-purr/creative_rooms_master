@@ -1,7 +1,7 @@
 <div class="search-results-container ">
 	<div class="col-xs-8">	
 		<p class="search-results-header">SEARCH RESULTS</p>
-		<div dir-paginate="(key, value) in properties|itemsPerPage:4"   ng-show="properties != null" class="col-xs-6 search-result-show" ng-mouseover="highlightOnMap(this, value.id)">
+		<div dir-paginate="(key, value) in properties|itemsPerPage:4"   ng-show="properties != null" class="col-xs-6 search-result-show" ng-mouseover="highlightOnMap(this, value.id)" ng-mouseleave="removeHighlightOnMap(this, value.id)">
 			<div class="hidden extra-room-info">
 				<p>{{value.description}}</p>
 				
