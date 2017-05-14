@@ -140,10 +140,26 @@
 }
 
 .ng-map {
-    height: 500px;
+    height: 100%;
 }
 
 .no-results-message{
     margin-left: 15px;
+}
+
+.pag-container{
+    display: block;
+    clear: both;
+}
+
+.search-results-left{
+    margin-top: 181px;   
+}
+
+.search-page-map-container{
+    position: fixed!important;
+    right: 0;
+    margin-top: 44px;
+    height: 83vh;
 }
 

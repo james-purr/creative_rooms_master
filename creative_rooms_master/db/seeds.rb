@@ -71,13 +71,31 @@ postcode_array = [
 'E17 4LP',
 'E17 5PE',
 'E17 8LW',
-'E17 8HH'
+'E17 8HH',
+'N16 0AA',
+'N16 0AB',
+'N16 0AD',
+'N16 0AS',
+'N16 0BB',
+'N16 0ER',
+'N16 0JB',
+'N16 0JY',
+'N16 1BT',
+'N16 5AH',
+'N16 5BQ',
+'N16 5LT',
+'N16 6BJ',
+'N16 6WG',
+'N16 7BE',
+'N16 7YA',
+'N16 9QH',
+'N16 8WG',
 ]
 
 Property.delete_all
-(0..37).each do |number|
+(0..50).each do |number|
 	property = Property.create(postcode: postcode_array.sample, description: FFaker::Lorem.paragraph, space_for_artist: [true, false].sample, user_id: property_owners.sample.id)
-	pi = PropertyImage.create(property_id: property.id, image: File.new("#{Rails.root}/app/assets/images/property_images/#{number}.jpg"))
+	pi = PropertyImage.create(property_id: property.id, image: File.new("#{Rails.root}/app/assets/images/property_images/#{(0..37).to_a.sample}.jpg"))
 end
 
 room_image_array = (1..19).to_a

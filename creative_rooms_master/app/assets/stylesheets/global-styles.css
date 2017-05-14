@@ -13,6 +13,10 @@ html,body,.content-container, .full-height {
 }
 
 .header-separator{
-	height:100px;
+	height: 122px;
+    background: rgb(230, 222, 222);
+    position: fixed;
+    width: 100%;
+    z-index: 100000000;
 }
 

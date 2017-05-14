@@ -30,6 +30,10 @@ function($scope, $timeout, $log, $stateParams, $state, properties,$http,NgMap){
 	    });	
 	};
 
+	$scope.goToRoom = function(path){
+		$state.go('room', { roomId: path });
+	};
+
 	var searchString = $stateParams.searchString;
 	getSearchResults(searchString);
 

@@ -20,7 +20,9 @@ class PropertiesController < ApplicationController
 	def geo_search_results
 		search_results = Property.where("longitude > ?", params[:west].to_f).where("longitude < ?", params[:east].to_f).where("latitude > ?", params[:south].to_f).where("latitude < ?", params[:north].to_f).select(:id, :latitude, :longitude, :user_id, :postcode).map(&:rooms)
 		@search_return = Room.room_with_image(search_results)
- 		@search_coordinates = calculate_average_position(@search_return)
+		lat = (params[:south].to_f + params[:north].to_f) / 2
+		lng = (params[:east].to_f + params[:west].to_f) / 2
+ 		@search_coordinates = [lat, lng]
 		render json: [@search_return, @search_coordinates]
 
 	end
