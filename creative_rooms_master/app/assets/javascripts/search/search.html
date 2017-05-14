@@ -1,7 +1,7 @@
 <div class="search-results-container ">
 	<div class="col-xs-8">	
 		<p class="search-results-header">SEARCH RESULTS</p>
-		<div class="col-xs-6 search-result-show" ng-repeat="(key, value) in properties">
+		<div ng-show="properties != null" class="col-xs-6 search-result-show" ng-repeat="(key, value) in properties">
 			<div class="hidden extra-room-info">
 				<p>{{value.description}}</p>
 				
@@ -23,10 +23,13 @@
 
 			</div>
 		</div>
+		<div ng-show="noProperties != null" class="no-results-message">
+			{{noProperties}}
+		</div>
 	</div>
 	<div class="col-xs-4 search-page-map-container">
 	    <div  map-lazy-load="https://maps.google.com/maps/api/js" class="map-container">
-	      <ng-map center="[51.590, -0.017]" zoom="12">
+	      <ng-map center="{{mapCenter}}" zoom="12" class="ng-map">
 	      	<marker ng-repeat="(key, value) in properties" position="{{value.position}}"></marker>
 	      </ng-map>
 	    </div>		

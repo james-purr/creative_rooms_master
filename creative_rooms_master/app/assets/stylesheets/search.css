@@ -139,3 +139,11 @@
 	margin-left: 5px;	
 }
 
+.ng-map {
+    height: 500px;
+}
+
+.no-results-message{
+    margin-left: 15px;
+}
+

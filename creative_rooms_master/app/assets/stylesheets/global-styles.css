@@ -8,5 +8,11 @@ html,body,.content-container, .full-height {
 
 .title-header{
 	margin-left:27px;
+	font-size:48px;
+	margin-top: 32px;
+}
+
+.header-separator{
+	height:100px;
 }
 
