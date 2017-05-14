@@ -10,13 +10,17 @@ class ApplicationController < ActionController::Base
   end
 
   def calculate_average_position(results)
-    latLngAv = [0,0]
-    results.values.each do |val|
-      latLngAv[0] += val[:position][0]
-        latLngAv[1] += val[:position][1]
+    if results.length > 0
+      latLngAv = [0,0]
+      results.values.each do |val|
+        latLngAv[0] += val[:position][0]
+          latLngAv[1] += val[:position][1]
+      end
+      latLngAv[0] = latLngAv[0] / results.count
+      latLngAv[1] = latLngAv[1] / results.count
+    else
+      latLngAv = nil
     end
-    latLngAv[0] = latLngAv[0] / results.count
-    latLngAv[1] = latLngAv[1] / results.count
     return latLngAv
   end
 
