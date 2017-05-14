@@ -18,14 +18,11 @@ function($scope, $timeout, $log, $stateParams, $state, properties,$http,NgMap){
         $scope.mapCenter = data.data[1];
         $scope.markers = {};
 		angular.forEach($scope.properties, function(value, key){
-			$scope.markers[value.id] = {position: value.position};
+			$scope.markers[value.id] = {position: value.position, icon: $scope.normalIcon()};
 		});
     });	
-
-
-
     $scope.highlightOnMap = function(passedScope, id){
-    	debugger	
+    	passedScope.markers[id]["icon"] = $scope.highlightlIcon();	
     };
 
     $scope.normalIcon = function() {
@@ -33,9 +30,7 @@ function($scope, $timeout, $log, $stateParams, $state, properties,$http,NgMap){
     };
 
     $scope.highlightlIcon = function() {
-      return {
-        url: 'http://i.imgur.com/E9zbxLQ.png'
-      };
+      return 'http://i.imgur.com/E9zbxLQ.png';
     }
 
 }]);
