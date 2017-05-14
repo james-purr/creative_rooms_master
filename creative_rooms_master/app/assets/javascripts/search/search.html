@@ -1,7 +1,7 @@
 <div class="search-results-container ">
 	<div class="col-xs-8">	
 		<p class="search-results-header">SEARCH RESULTS</p>
-		<div ng-show="properties != null" class="col-xs-6 search-result-show" ng-repeat="(key, value) in properties">
+		<div dir-paginate="(key, value) in properties|itemsPerPage:10"   ng-show="properties != null" class="col-xs-6 search-result-show">
 			<div class="hidden extra-room-info">
 				<p>{{value.description}}</p>
 				
