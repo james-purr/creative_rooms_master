@@ -1,7 +1,7 @@
 <div class="search-results-container ">
 	<div class="col-xs-8">	
 		<p class="search-results-header">SEARCH RESULTS</p>
-		<div dir-paginate="(key, value) in properties|itemsPerPage:10"   ng-show="properties != null" class="col-xs-6 search-result-show">
+		<div dir-paginate="(key, value) in properties|itemsPerPage:4"   ng-show="properties != null" class="col-xs-6 search-result-show">
 			<div class="hidden extra-room-info">
 				<p>{{value.description}}</p>
 				
@@ -23,6 +23,7 @@
 
 			</div>
 		</div>
+		<dir-pagination-controls max-size="10" direction-links="true" boundary-links="true"></dir-pagination-controls>
 		<div ng-show="noProperties != null" class="no-results-message">
 			{{noProperties}}
 		</div>
