@@ -16,12 +16,12 @@ function($scope, $timeout, $log, $stateParams, $state, properties,$http,NgMap){
 		}else{
 			urlSearchString = "/geo_search_results/" + query["north"] + "/" + query["south"] + "/" + query["east"] + "/" + query["west"]
 		};
-		
+
 		$http.get(urlSearchString + '.json').then(function(data){
 	        $scope.properties =  data.data[0];
 	        $scope.properties = Object.keys($scope.properties).length ? $scope.properties : null
 
-	        $scope.noProperties = $scope.properties ? null : 'No rooms found for ' + $scope.searchString + '. Try searching again or get notified when rooms in ' + $scope.searchString + ' become available.'
+	        $scope.noProperties = $scope.properties ? null : 'No rooms found. Try searching again or get notified when rooms become available.'
 	        $scope.mapCenter = data.data[1];
 	        $scope.markers = {};
 			angular.forEach($scope.properties, function(value, key){
