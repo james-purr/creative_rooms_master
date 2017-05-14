@@ -8,5 +8,6 @@
 //= require angular-animate
 //= require ngmap/build/scripts/ng-map
 //= require angular-rateit/dist/ng-rateit
+//= require angularUtils-pagination/dirPagination
 
 //= require_tree .

@@ -2,11 +2,22 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   respond_to :json
-
+  helper_method :calculate_average_position
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   def angular
     render '/layouts/application'
+  end
+
+  def calculate_average_position(results)
+    latLngAv = [0,0]
+    results.values.each do |val|
+      latLngAv[0] += val[:position][0]
+        latLngAv[1] += val[:position][1]
+    end
+    latLngAv[0] = latLngAv[0] / results.count
+    latLngAv[1] = latLngAv[1] / results.count
+    return latLngAv
   end
 
   private
