@@ -15,6 +15,7 @@ class Room < ApplicationRecord
 		return_object = {}
 		rooms.each do |room| 
 			return_object[room[0].id] = {
+				id: room[0].property.id,
 				description: room[0].description,
 				postcode: room[0].property.postcode,
 				image: room[0].room_images.first.image.url,
