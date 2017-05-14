@@ -17,4 +17,18 @@ function($scope, $timeout, $log, $stateParams, $state, properties,$http,NgMap){
         $scope.noProperties = $scope.properties ? null : 'No rooms found for ' + $scope.searchString + '. Try searching again or get notified when rooms in ' + $scope.searchString + ' become available.'
         $scope.mapCenter = data.data[1];
     });	
+    $scope.highlightOnMap = function(e){
+    	debugger
+    };
+
+    $scope.normalIcon = function() {
+      return 'http://www.iconsdb.com/icons/preview/color/B2E87B/marker-xxl.png';
+    };
+
+    $scope.highlightlIcon = function() {
+      return {
+        url: 'http://www.iconsdb.com/icons/preview/color/009E4A/marker-xxl.png'
+      };
+    }
+
 }]);
