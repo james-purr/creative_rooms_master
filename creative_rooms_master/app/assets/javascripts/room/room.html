@@ -1,6 +1,11 @@
 <div class="room-show-container">
 	<div class="col-xs-8 room-container">
-		<p>This is the search results view</p>	
+		<p>This is the search results view</p>
+        <slick infinite="true" slides-to-show="3" class="slider" settings="slickConfig" dots="true">
+            <div ng-repeat="i in images track by $index">
+                <div>paragraph</div>
+            </div>
+        </slick>	
 	</div>
 	<div class="col-xs-4 search-page-map-container">
 		<p>this is the maps mate.</p>

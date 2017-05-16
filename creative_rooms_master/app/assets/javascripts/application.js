@@ -1,3 +1,4 @@
+//= require jquery
 //= require angular
 //= require AngularDevise
 //= require angular-ui-router
@@ -9,6 +10,6 @@
 //= require ngmap/build/scripts/ng-map
 //= require angular-rateit/dist/ng-rateit
 //= require angularUtils-pagination/dirPagination
-//= require angular-slick-carousel/src/slick
+//= require slick-carousel/slick/slick
 //= require angular-slick-carousel/dist/angular-slick
 //= require_tree .
