@@ -8,6 +8,7 @@ angular.module('creativeRooms')
 function($scope, $stateParams, $state, $http, NgMap){
 	var roomId = $stateParams.roomId;
 	$http.get('/rooms/' + roomId + '.json').then(function(data){
+		$scope.room = data.data;
 		debugger
 	});
 }]);

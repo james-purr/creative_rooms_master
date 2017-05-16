@@ -11,6 +11,12 @@ class Room < ApplicationRecord
 
 	def room_info
 		return_object = {}
+		return_object[:id] = self.id
+		return_object[:room_description] = self.description
+		return_object[:property_description] = self.property.description
+		return_object[:images] = self.room_images.map(&:image).map(&:url)
+		return_object[:location] = self.property.search_data[:location]
+		return_object
 	end
 
 	private
