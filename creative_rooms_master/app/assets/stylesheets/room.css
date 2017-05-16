@@ -9,3 +9,25 @@
 .slick-slide, .slick-list , .slick-track, .slick-slider, .slick-slide div, .slick-slide div img{
 	height:auto!important;
 }
+
+.slick-slide img{
+	width:80%;
+	margin: 0 auto;
+}
+
+.slick-prev:before, .slick-next:before{
+    font-size: 34px!important;
+    color: black!important;
+}
+
+.slick-prev, .slick-next{
+	z-index: 100!important;
+	top: 44%!important;
+}
+.slick-prev{
+	left: 12%!important;
+}
+
+.slick-next {
+	right: 14%!important;
+}

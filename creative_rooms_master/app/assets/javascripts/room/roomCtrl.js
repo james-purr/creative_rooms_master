@@ -15,7 +15,7 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope){
 
 	    $scope.slickPanels = {
 	      method: {},
-	      dots:true,
+	      dots:false,
 	      infinite: false,
 	      speed: 300,
 	      slidesToShow: 1,
@@ -23,6 +23,7 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope){
 	      slidesToScroll: 1,
 	      autoPlay: false,
 	      adaptiveHeight: true,
+	      arrows: true,
 	      event: {
 	        beforeChange: function() {
 	          console.log("before change called");
