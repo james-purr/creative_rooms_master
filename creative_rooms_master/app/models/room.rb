@@ -16,6 +16,8 @@ class Room < ApplicationRecord
 		return_object[:property_description] = self.property.description
 		return_object[:images] = self.room_images.map(&:image).map(&:url)
 		return_object[:location] = self.property.search_data[:location]
+		return_object[:postcode] = self.property.postcode
+		return_object[:owner] = self.property.user.full_name
 		return_object
 	end
 
