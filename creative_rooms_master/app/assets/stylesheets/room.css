@@ -1,3 +1,11 @@
 .room-show-container{
 	margin-top: 181px;	
 }   
+
+.slides{
+	height: 350px;
+}
+
+.slick-slide, .slick-list , .slick-track, .slick-slider, .slick-slide div, .slick-slide div img{
+	height:auto!important;
+}
