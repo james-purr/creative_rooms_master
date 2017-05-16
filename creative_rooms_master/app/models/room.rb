@@ -9,6 +9,10 @@ class Room < ApplicationRecord
 		self.ratings.average(:rating).to_i
 	end
 
+	def room_info
+		return_object = {}
+	end
+
 	private
 
 	def self.room_with_image(rooms)
