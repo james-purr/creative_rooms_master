@@ -12,7 +12,7 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope){
 		$scope.room = data.data;
 		$scope.images = data.data.images;
 		$rootScope.viewData = $scope.images;
-
+		// $scope.datePicker.date = {startDate: new Date(), endDate: new Date()};
 	    $scope.slickPanels = {
 	      method: {},
 	      dots:false,

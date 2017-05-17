@@ -120,8 +120,9 @@
     padding-right: 13px;
     padding-top: 6px;
 	height: 75px;
-    background: rgba(250, 250, 250, 0.7);
+    background: rgba(39, 95, 106, 0.6);
     font-size: 21px;	
+    color: white;
 }
 
 .ratings-container .user-info, .ratings-container .address-info{
@@ -150,10 +151,11 @@
 .pag-container{
     display: block;
     clear: both;
+    margin-left: 15px;
 }
 
 .search-results-left{
-    margin-top: 181px;   
+    margin-top: 128px; 
 }
 
 .search-page-map-container{
@@ -161,5 +163,14 @@
     right: 0;
     margin-top: 44px;
     height: 83vh;
+}
+
+.pagination > li > a, .pagination > li > span{
+    background-color: #A0C0C4!important;
+    color: white!important;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    background-color: #275F6A!important;
 }
 

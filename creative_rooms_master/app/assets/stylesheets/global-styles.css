@@ -1,20 +1,29 @@
-html,body,.content-container, .full-height {
-	height: 100vh;
+.content-container, .full-height {
+	height: 100vh!important;
+	background: #D3E2E5;
+}
+
+.full-content-container{
+	background: #D3E2E5;
+}
+
+html,body{
+	height:103%!important;
+}
+
+body{
+	background: #D3E2E5;
 }
 
 .border-right{
 	border-right: 1px solid #eee;
 }
 
-.title-header{
-	margin-left:27px;
-	font-size:48px;
-	margin-top: 32px;
-}
+
 
 .header-separator{
 	height: 122px;
-    background: rgb(230, 222, 222);
+    background: #6C969D;
     position: fixed;
     width: 100%;
     z-index: 100000000;

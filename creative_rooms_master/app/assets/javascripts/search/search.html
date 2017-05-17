@@ -1,5 +1,6 @@
 <div class="search-results-container ">
-	<div class="col-xs-8 search-results-left">	
+	<div class="col-xs-8 search-results-left">
+		<dir-pagination-controls max-size="10" direction-links="true" boundary-links="true" ng-show="properties != null" class="pag-container"></dir-pagination-controls>	
 		<div dir-paginate="(key, value) in properties|itemsPerPage:4"   ng-show="properties != null" class="col-xs-6 search-result-show" ng-mouseover="highlightOnMap(this, value.id)" ng-mouseleave="removeHighlightOnMap(this, value.id)" ng-click="goToRoom(value.id)">
 			<div class="hidden extra-room-info">
 				<p>{{value.description}}</p>
@@ -22,7 +23,7 @@
 
 			</div>
 		</div>
-		<dir-pagination-controls max-size="10" direction-links="true" boundary-links="true" ng-show="properties != null" class="pag-container"></dir-pagination-controls>
+
 		<div ng-show="noProperties != null" class="no-results-message">
 			{{noProperties}}
 		</div>

@@ -1,4 +1,4 @@
-angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize', 'ui.select', 'ngMaterial', 'ngMap', 'angularUtils.directives.dirPagination', 'slickCarousel'])
+angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize', 'ui.select', 'ngMaterial', 'ngMap', 'angularUtils.directives.dirPagination', 'slickCarousel', 'daterangepicker'])
 .config([
 	'$stateProvider',
 	'$urlRouterProvider',

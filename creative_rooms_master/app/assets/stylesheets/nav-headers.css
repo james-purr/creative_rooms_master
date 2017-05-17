@@ -1,5 +1,11 @@
 .title-header{
-	display:inline-block;
+	display: inline-block;
+    font-family: SoftLine;
+    color: white;
+    font-weight: bold;
+    margin-left: 32px;
+    font-size: 37px;
+    margin-top: 21px;
 }
 
 .short-header{
@@ -7,5 +13,19 @@
 }
 
 .navbar-collapse{
-	margin-top:24px;
+	margin-top: 32px;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background: none!important;
+}
+
+.navbar-nav > li > a{
+    font-size: 25px;
+    color: white;
+}
+
+.navbar-nav > li{
+	margin-right: 14px;
 }

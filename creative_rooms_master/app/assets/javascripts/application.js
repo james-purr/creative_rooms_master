@@ -12,7 +12,7 @@
 //= require angularUtils-pagination/dirPagination
 //= require slick-carousel/slick/slick
 //= require angular-slick-carousel/dist/angular-slick
-//= require moment/src/moment
+//= require moment/moment
 //= require bootstrap-daterangepicker/daterangepicker
 //= require angular-daterangepicker/js/angular-daterangepicker
 //= require_tree .
