@@ -11,7 +11,7 @@
 }
 
 .slick-slide img{
-	width:80%;
+	width:100%;
 	margin: 0 auto;
 }
 
@@ -24,10 +24,22 @@
 	z-index: 100!important;
 	top: 44%!important;
 }
-.slick-prev{
-	left: 12%!important;
+
+.slick-prev {
+    left: 5%!important;
 }
 
 .slick-next {
-	right: 14%!important;
+	right: 5%!important;
 }
+
+.room-container{
+	padding-left: 0!important;
+    margin-top: -59px
+}
+
+.room-info-container{
+    margin-top: -46px;
+}
+
+
