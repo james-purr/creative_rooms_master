@@ -43,4 +43,17 @@
     margin-top: -46px;
 }
 
+.form-control.date-picker{
+	width: 52%;
+	display: inline-block;
+}
+
+#book-button{
+	margin-left: 20px;
+    height: 33px;
+    border-radius: 4px;	
+    margin-top: -1px;
+}
+
+
 

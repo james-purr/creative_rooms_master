@@ -23,10 +23,13 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope){
 	        	cancelLabel: 'Cancel',
 	      	},
 	      	minDate: moment(),
+	      	minDate: new Date,
+	      	// THIS IS WHERE YOU'D GET THE DATES YOU CAN'T USE
+			isInvalidDate: function (date) {
+			    var formatted = date.format('MM/DD/YYYY');
+			    return ["05/22/2017","05/23/2017"].indexOf(formatted) > -1;
+			},
 		};
-
-		$scope.minimumDate = moment();
-
 
 	    $scope.slickPanels = {
 	      method: {},
@@ -59,4 +62,8 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope){
 	    };
 	    $rootScope.viewLoaded = true;
 	});
+
+	$scope.requestBooking = function(){
+		debugger
+	}
 }]);

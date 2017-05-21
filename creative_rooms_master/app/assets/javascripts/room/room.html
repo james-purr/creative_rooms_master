@@ -9,7 +9,14 @@
 	    </slick>
 	</div>
 	<div class="col-xs-4 room-info-container">
-		<input date-range-picker readonly="readonly" class="form-control date-picker" type="text" ng-model="date"  options="options"/>
+		<div class="col-xs-12">
+			<p><strong>Select your dates:</strong></p>	
+			<input date-range-picker readonly="readonly" class="form-control date-picker" type="text" ng-model="date"  options="options"/>
+			<button id="book-button" class="btn btn-primary" ng-click="requestBooking()">Request to book</button>
+			<br>
+			<br>
+
+		</div>
 		<div class="col-xs-6">
 			<p><strong>Owner:</strong></p>						
 			<p>{{room.owner}}</p>
