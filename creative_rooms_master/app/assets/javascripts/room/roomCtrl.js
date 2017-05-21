@@ -13,8 +13,19 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope){
 		$scope.interests = Object.values($scope.room.owner_interests);
 		$scope.images = data.data.images;
 		$rootScope.viewData = $scope.images;
-		$scope.datePicker = {};
-		$scope.datePicker.date = {startDate: moment(), endDate: moment()};
+		$scope.options = {
+	    	applyClass: 'btn-green',
+	    	locale: {
+	    		applyLabel: "Select",
+	        	fromLabel: "From",
+	        	format: "YYYY-MM-DD", 
+	        	toLabel: "To",
+	        	cancelLabel: 'Cancel',
+	      	},
+	      	minDate: moment(),
+		};
+
+		$scope.minimumDate = moment();
 
 
 	    $scope.slickPanels = {
