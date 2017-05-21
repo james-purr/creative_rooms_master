@@ -9,14 +9,26 @@
 	    </slick>
 	</div>
 	<div class="col-xs-4 room-info-container">
-		<p><strong>Owner:</strong></p>
-		<p>{{room.owner}}</p>
-		<p><strong>Property Info:</strong></p>
-		<p>{{room.property_description}}</p>
-		<p><strong>Room Info:</strong></p>
-		<p>{{room.room_description}}</p>
-		<p><strong>Postcode:</strong></p>
-		<p>{{room.postcode}}</p>
-<!-- 		<input date-range-picker class="form-control date-picker" type="text" ng-model="datePicker.date" /> -->
+		<input date-range-picker readonly="readonly" class="form-control date-picker" type="text" ng-model="datePicker.date" options="{locale: {format: 'MMMM D, YYYY'}}"/>
+		<div class="col-xs-6">
+			<p><strong>Owner:</strong></p>						
+			<p>{{room.owner}}</p>
+		</div>
+		<div class="col-xs-6">
+			<p><strong>Arts Interests:</strong></p>						
+			<p ng-repeat=" interest in interests">{{interest}}</p>
+		</div>
+		<div class="col-xs-12">
+			<p><strong>Why do you want to help artists?</strong></p>
+			<p>{{room.purpose}}</p>
+		</div>
+		<div class="col-xs-12">
+			<p><strong>Property Info:</strong></p>
+			<p>{{room.property_description}}</p>
+			<p><strong>Room Info:</strong></p>
+			<p>{{room.room_description}}</p>
+		</div>
+
+
 	</div>
 </div>

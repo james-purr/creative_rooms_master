@@ -10,9 +10,13 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope){
 	var roomId = $stateParams.roomId;
 	$http.get('/rooms/' + roomId + '.json').then(function(data){
 		$scope.room = data.data;
+		$scope.interests = Object.values($scope.room.owner_interests);
 		$scope.images = data.data.images;
 		$rootScope.viewData = $scope.images;
-		// $scope.datePicker.date = {startDate: new Date(), endDate: new Date()};
+		$scope.datePicker = {};
+		$scope.datePicker.date = {startDate: moment(), endDate: moment()};
+
+
 	    $scope.slickPanels = {
 	      method: {},
 	      dots:false,

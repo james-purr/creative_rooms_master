@@ -18,6 +18,13 @@ class Room < ApplicationRecord
 		return_object[:location] = self.property.search_data[:location]
 		return_object[:postcode] = self.property.postcode
 		return_object[:owner] = self.property.user.full_name
+		return_object[:owner_interests] = {}
+		self.property.user.arts_interest.each_with_index do |interest, index|
+			return_object[:owner_interests][index] = interest
+		end
+
+		
+		return_object[:purpose] = self.property.user.purpose
 		return_object
 	end
 

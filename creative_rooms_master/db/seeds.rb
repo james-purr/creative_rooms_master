@@ -117,10 +117,18 @@ require 'ffaker'
 # 	end
 # end
 
-(User.with_role :admin).each do |user|
+purpose_array = [
+	"I know the pain of being young and penniless and trying to make my way up in the music industry! I was in the industry when I was younger - and now I'm lucky enough to have my own spare room which I'm really happy to rent out to the artists that need it most",
+	"I hate that the arts scene is so hard to focus on when you've got no financial backing, so anything I can do to help is ace!",
+	"I spend so much of my time discussing and consuming the London arts scene, and I feel like this is a great opporunity to give a leg up to the next generation"
+]
+
+
+(User.with_role :Homeowner).each do |user|
 	array = ['Art', 'Acting', 'Music', 'Dance']
 	user.arts_interest = array.sample(2)
-	user.
+	user.purpose = purpose_array.sample
+	user.save
 end
 
 
