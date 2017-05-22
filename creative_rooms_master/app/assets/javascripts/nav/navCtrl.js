@@ -2,7 +2,8 @@ angular.module('creativeRooms')
 .controller('NavCtrl', [
 '$scope',
 'Auth',
-function($scope, Auth){
+'$rootScope',
+function($scope, Auth, $rootScope){
 	$scope.signedIn = Auth.isAuthenticated;
 	$scope.logout = Auth.logout;
 
@@ -10,10 +11,14 @@ function($scope, Auth){
 		$scope.user = user;
 	});
 	$scope.$on('devise:new-registration', function (e, user){
+		debugger
+		$rootScope.user = user
 		$scope.user = user;
 	});
 
 	$scope.$on('devise:login', function (e, user){
+		debugger
+		$rootScope.user = user
 		$scope.user = user;
 	});
 

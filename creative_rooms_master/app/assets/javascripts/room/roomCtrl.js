@@ -6,8 +6,10 @@ angular.module('creativeRooms')
 '$http',
 'NgMap',
 '$rootScope',
-function($scope, $stateParams, $state, $http, NgMap, $rootScope){
+'Auth',
+function($scope, $stateParams, $state, $http, NgMap, $rootScope, Auth){
 	var roomId = $stateParams.roomId;
+	var user = $rootScope.user;
 	$http.get('/rooms/' + roomId + '.json').then(function(data){
 		$scope.room = data.data;
 		$scope.interests = Object.values($scope.room.owner_interests);
@@ -63,7 +65,9 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope){
 	    $rootScope.viewLoaded = true;
 	});
 
-	$scope.requestBooking = function(){
-		debugger
+	$scope.requestBooking = function(passedScope){
+		if(passedScope.user){
+			
+		}
 	}
 }]);
