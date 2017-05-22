@@ -36,6 +36,11 @@ angular.module('creativeRooms', ['ui.router', 'templates', 'Devise', 'ngSanitize
 		    templateUrl: "room/room.html",
 		    controller: 'RoomCtrl',
 		})
+		.state('dashboard', {
+		    url: "/dashboard",
+		    templateUrl: "dashboard/dashboard.html",
+		    controller: 'DashboardCtrl',
+		})
 	    .state('register', {
 	      onEnter: ['$state', 'Auth', function($state, Auth) {
 	        Auth.currentUser().then(function (){

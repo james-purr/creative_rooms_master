@@ -77,7 +77,7 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope, Auth){
 			}
 			debugger
 			$http.get('/booking-request', config).then(function(data){
-				debugger
+				$state.go('dashboard');
 			});
 		}else{
 			// go to login/register page - change to modal
