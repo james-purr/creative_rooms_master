@@ -67,7 +67,9 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope, Auth){
 
 	$scope.requestBooking = function(passedScope){
 		if(passedScope.user){
-			
+			// grab the selected date information and pass it up to the booking controllers
+		}else{
+			// go to login/register page - change to modal
 		}
 	}
 }]);
