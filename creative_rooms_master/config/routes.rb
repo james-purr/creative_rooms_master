@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 	match '/search_results/:search_term' => 'properties#search_results', via: [:get]
 	match '/geo_search_results/:north/:south/:east/:west' => 'properties#geo_search_results', via: [:get]
 	get '/geo_search_results/:north/:south/:east/:west' => 'properties#geo_search_results', :constraints => {:north => /[^\/]+/, :south => /[^\/]+/, :east => /[^\/]+/, :west => /[^\/]+/ }
+	match '/booking-request' => 'bookings#booking_request', via: [:get]
 
+	
 
 	
 end

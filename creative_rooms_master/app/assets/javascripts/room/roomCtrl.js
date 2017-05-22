@@ -65,9 +65,20 @@ function($scope, $stateParams, $state, $http, NgMap, $rootScope, Auth){
 	    $rootScope.viewLoaded = true;
 	});
 
-	$scope.requestBooking = function(passedScope){
+	$scope.requestBooking = function(passedScope, room){
 		if(passedScope.user){
 			// grab the selected date information and pass it up to the booking controllers
+			var config = {
+			    params: {
+			        startDate: passedScope.date.startDate["_d"],
+			        endDate: passedScope.date.endDate["_d"],
+			        room: room,
+			    }
+			}
+			debugger
+			$http.get('/booking-request', config).then(function(data){
+				debugger
+			});
 		}else{
 			// go to login/register page - change to modal
 		}

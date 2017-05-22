@@ -11,13 +11,11 @@ function($scope, Auth, $rootScope){
 		$scope.user = user;
 	});
 	$scope.$on('devise:new-registration', function (e, user){
-		debugger
 		$rootScope.user = user
 		$scope.user = user;
 	});
 
 	$scope.$on('devise:login', function (e, user){
-		debugger
 		$rootScope.user = user
 		$scope.user = user;
 	});
