@@ -1,7 +1,7 @@
 <h2 class="title-header"> Creative <br>Rooms </h2>
 <div class="collapse navbar-collapse pull-right" ng-controller="NavCtrl">
   <ul class="nav navbar-nav">
-
+    <li ng-show="signedIn()"><a href="/dashboard"><i class="fa fa-envelope-open" aria-hidden="true"></i></a></li>
     <li ng-hide="signedIn()"><a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
     <li ng-hide="signedIn()"><a href="/register"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
     <li ng-show="signedIn()"><a href="/"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
